@@ -27,4 +27,19 @@ public class UserService {
         Optional<User> user = repository.findByName(name);
         return user.get();
     }
+
+    public User createUser(User newUser) {
+        return repository.save(newUser);
+    }
+
+
+    public User updateUser(User newUser) {
+        return repository.save(newUser);
+    }
+
+    public String deleteUser(String id) {
+        repository.deleteById(id);
+        return "Usuário excluído com sucesso.";
+    }
 }
+
